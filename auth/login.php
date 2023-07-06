@@ -13,6 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     } else {
         if (authenticateUser($username, $password)) {
             $_SESSION['username'] = $username;
+            $_SESSION['auth'] = true;
             header('Location: ../users/dashboard.php');
             exit();
         } else {
