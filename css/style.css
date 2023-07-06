@@ -1,0 +1,45 @@
+.container{
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 50px;
+    padding: 30px 30px;
+    border: 2px solid  #d34970; 
+    background-color:  antiquewhite;
+    border-radius: 9px;
+}
+
+.form-group input {
+    font-family: 'Fira Sans', 'sans-serif';
+    text-align: center;
+    display: block;
+    width: 400px;
+    padding: 8px;
+    border: 2px solid black;
+    border-radius: 9px;
+    margin: 11px auto;
+    font-size: 20px;
+}
+
+.error {
+    background-color: pink;
+    color: red;
+    width: 300px;
+    margin: 0 auto;
+}
+
+.btn {
+    font-family: 'Fira Sans', 'sans-serif';
+    margin: 0px 9px;
+    background-color: black;
+    color: aliceblue;
+    padding: 4px, 14px;
+    border: 2px solid grey;
+    border-radius: 10px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: grey;
+}

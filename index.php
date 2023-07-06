@@ -1,61 +1,37 @@
-<?php session_start(); ?>
-<html>
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-	<title>Homepage</title>
-	<style>
-body {
-	margin: auto;
-	/* background-color: #d34970; */
-}
-#container{
-	height: 657px;
-	justify-content: center;
-	text-align:center;
-	background-color: antiquewhite;
-}
-#header {
-	width: auto;
-	color: maroon;
-	font-size: 32px;
-	padding: 10px 10px 10px 0px;
-	margin-bottom: 25px;
-	/* border-bottom: 1px solid green; */
-}
-
-#footer {
-	/* border-top: 1px solid green; */
-	margin-top: 20px;
-	color: #336699;
-	padding: 10px;	
-
-}
-
-	</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-	<div id= "container">
-		<div id="header">
-			Welcome to my project !
-		</div>
-	<?php
-	if(isset($_SESSION['valid'])) {			
-		include("connection.php");					
-		$result = mysqli_query($mysqli, "SELECT * FROM login");
-	?>
-		Welcome <?php echo $_SESSION['name'] ?> ! <a href='logout.php'>Logout</a><br/>
-		<br/>
-		<a href='view.php'>View and Add Products</a>
-		<br/><br/>
-	<?php	
-	} else {
-		echo "You must be logged in to view this page.<br/><br/>";
-		echo "<a href='login.php'>Login</a> | <a href='register.php'>Register</a>";
-	}
-	?>
-	<div id="footer">
-		Created by Rohan Maharjan 
-	</div>
-</div>
+    <div class="container">
+        <h1>Login</h1>
+        <form action="auth/login.php" method="post">
+            <?php if ($error) : ?>
+                <p class="error"><?php echo $error; ?></p>
+            <?php endif; ?>
+
+            <div class="form-group">
+                <input type="text" name="username" id="username" placeholder="Username or Email">
+            </div>
+
+            <div class="form-group">
+                <input type="password" name="password" id="password" placeholder="Password">
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Login" class="btn" name="login">
+            </div>
+
+            <p>Don't have an account? <a href="signup.php">Sign Up</a></p>
+
+        </form>
+    </div>
 </body>
+
 </html>

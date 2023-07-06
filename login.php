@@ -1,10 +1,10 @@
-<?php 
+<?php
 // session_start(); 
 // if (array_key_exists('signUp', $_POST)) {
-	# code...
-	// include("connection.php");
+# code...
+// include("connection.php");
 
-	// echo "<br>sign Up button pressed";
+// echo "<br>sign Up button pressed";
 // }
 ?>
 <!-- // <html>
@@ -57,8 +57,8 @@
 // 		}
 // 	}
 // } else {
-	?>
-	<!-- <div class="container">
+?>
+<!-- <div class="container">
 		<p><font size="+2">Login</font></p>
 		<form name="form1" method="post" action="">
 				
@@ -72,7 +72,8 @@
 	</div> -->
 <?php
 // }
-// ?>
+// 
+?>
 <!-- </body> -->
 <!-- </html> -->
 
@@ -80,39 +81,42 @@
 include("server.php");
 ?>
 <!DOCTYPE html>
+
 <head>
 	<title>Register</title>
 	<style>
-		.container{
+		.container {
 			text-align: center;
 			justify-content: center;
 			align-items: center;
 			margin: 50px 50px;
 			padding: 30px 30px;
-			border: 2px solid  #d34970; 
-			background-color:  antiquewhite;
+			border: 2px solid #d34970;
+			background-color: antiquewhite;
 			border-radius: 9px;
 		}
-		.form-group input{
+
+		.form-group input {
 			font-family: 'Fira Sans', 'sans-serif';
 			text-align: center;
 			display: block;
 			width: 400px;
-			padding:  8px;
+			padding: 8px;
 			border: 2px solid black;
 			border-radius: 9px;
-			margin:  11px auto;
+			margin: 11px auto;
 			font-size: 20px;
-			
+
 		}
-		.error{
-			background-color:pink;
+
+		.error {
+			background-color: pink;
 			color: red;
 			width: 300px;
 			margin: 0 auto;
 		}
 
-		.btn{
+		.btn {
 			font-family: 'Fira Sans', 'sans-serif';
 			margin: 0px 9px;
 			background-color: black;
@@ -123,19 +127,21 @@ include("server.php");
 			fomt-size: 15px;
 			cursor: pointer;
 		}
-		.btn:hover{
+
+		.btn:hover {
 			background-color: grey;
 		}
 
 
-		.active a{
+		.active a {
 			text-decoration: none;
-			
+
 		}
 	</style>
 </head>
+
 <body>
-	<div class ="active">
+	<div class="active">
 		<a href="index.php">Home</a>
 	</div>
 	<div class="container">
@@ -143,22 +149,23 @@ include("server.php");
 		<h2><a href="loggedInPage.php">Homepage</a></h2>
 		<form name="form1" method="post" action="">
 			<div class="error"><?php echo $error2; ?></div>
-				<div class = "form-group">
-					<input type="text" name="email" placeholder ="Email">
-				</div>
-				<div class = "form-group">
-					<input type="password" name="password" placeholder="Password">
-				</div>
-				<div class = "form-group">
-					<label>Keep me logged in</label>
-					<input type="checkbox" name="stayLoggedIn" />
-				</div>
-				<div class = "form-group">
-					<input class = "btn" type="submit" name="logIn" value="Log In">
-				</div>		
-					<p>Not Registerd?<a href="register.php">Register</a></p>
-				</div>
+			<div class="form-group">
+				<input type="text" name="email" placeholder="Email">
+			</div>
+			<div class="form-group">
+				<input type="password" name="password" placeholder="Password">
+			</div>
+			<div class="form-group">
+				<label>Keep me logged in</label>
+				<input type="checkbox" name="stayLoggedIn" />
+			</div>
+			<div class="form-group">
+				<input class="btn" type="submit" name="logIn" value="Log In">
+			</div>
+			<p>Not Registerd?<a href="register.php">Register</a></p>
+	</div>
 	</form>
-</div>
+	</div>
 </body>
+
 </html>
