@@ -1,6 +1,10 @@
 <?php
 include("../includes/config.inc.php");
 
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 $error = '';
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
@@ -17,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
         if (saveUser($username, $email, $hashed_password)) {
-            header('Location: index.php');
+            header('Location: ../index.php');
             exit();
         } else {
             $error = "Error occured while registering the user.";

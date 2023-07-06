@@ -2,7 +2,7 @@
 
 $servername = "localhost";
 $username = "root";
-$password = "";
+$password = "lunala";
 $database = "RohanCRUD";
 
 try{
@@ -26,6 +26,7 @@ try{
 
     $products_sql = "CREATE TABLE IF NOT EXISTS products(
         id INT PRIMARY KEY AUTO_INCREMENT,
+        name VARCHAR(254) NOT NULL,
         qty INT NOT NULL,
         price DECIMAL(10, 2) NOT NULL,
         user_id INT,

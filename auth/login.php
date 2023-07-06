@@ -14,6 +14,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         if (authenticateUser($username, $password)) {
             $_SESSION['username'] = $username;
             $_SESSION['auth'] = true;
+            
+            $userId = getUserId($username);
+            $_SESSION['login_id'] = $userId;
             header('Location: ../users/dashboard.php');
             exit();
         } else {
@@ -40,4 +43,17 @@ function authenticateUser($username, $password)
     }
 }
 
+function getUserId($username)
+{
+    global $conn;
+    $query = "SELECT id FROM users WHERE username = :username OR email = :username";
+
+    $stmt = $conn->prepare($query);
+    $stmt->bindParam(':username', $username);
+    $stmt->execute();
+
+    $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    return $user['id'];
+}
 ?>

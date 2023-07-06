@@ -47,7 +47,7 @@ session_start();
         </div>
         <a href='../auth/logout.php'>Logout</a><br />
         <br />
-        <a href='view.php'>View and Add Products</a>
+        <a href='../products/index.php'>View and Add Products</a>
         <br /><br />
         <div id="footer">
             Created by Rohan Maharjan
