@@ -34,25 +34,45 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create Products</title>
+    <style>
+        #bd{
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+        }
+        #fm{
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+        }
+        .form-group{
+            margin: 5px;
+            padding: 5px;
+        }
+        .in{
+            text-align:center;
+            margin: 5px;
+        }
+    </style>
 </head>
 
-<body>
+<body id="bd">
     
 <a href="../users/dashboard.php">Home</a> | <a href="index.php">View Products</a> | <a href="../auth/logout.php">Logout</a>
     <br><br>
 
-    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+    <form id="fm" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
         <div class="form-group">
-            <input type="text" name="name" id="name" placeholder="Name">
+            <input class="in" type="text" name="name" id="name" placeholder="Name">
         </div>
         <div class="form-group">
-            <input type="text" name="qty" id="qty" placeholder="Quantity">
+            <input class="in" type="text" name="qty" id="qty" placeholder="Quantity">
         </div>
         <div class="form-group">
-            <input type="text" name="price" id="price" placeholder="Price">
+            <input class="in" type="text" name="price" id="price" placeholder="Price">
         </div>
         <div class="form-group">
-            <input type="submit" value="Create" name="create" class="btn">
+            <input class="in" type="submit" value="Create" name="create" class="btn">
         </div>
     </form>
 </body>

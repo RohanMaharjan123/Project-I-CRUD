@@ -1,15 +1,24 @@
 <?php
+$error = '';
+
 session_start();
+if (isset($_POST['login'])) {
 include("../includes/config.inc.php");
 
-$error = '';
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $username = $_POST['username'];
     $password = $_POST['password'];
 
+    // Perform data filters
     if (empty($username) || empty($password)) {
         $error = "Username and password are required.";
+    }
+    echo "<br/>";
+	echo "<a href='../index.php'>Go back</a>";
+    // Check if there are any errors
+    if (!empty($error)) {
+        $error = "<b>There were the following error(s) in your form:</b><br>" . $error;
     } else {
         if (authenticateUser($username, $password)) {
             $_SESSION['username'] = $username;
@@ -21,6 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             exit();
         } else {
             $error = "Invalid username or password.";
+            }
         }
     }
 }
@@ -57,3 +67,40 @@ function getUserId($username)
     return $user['id'];
 }
 ?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Login</h1>
+        <form action="login.php" method="post">
+            <?php if ($error) : ?>
+                <p class="error"><?php echo $error; ?></p>
+            <?php endif; ?>
+
+            <div class="form-group">
+                <input type="text" name="username" id="username" placeholder="Username or Email">
+            </div>
+
+            <div class="form-group">
+                <input type="password" name="password" id="password" placeholder="Password">
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Login" class="btn" name="login">
+            </div>
+
+            <p>Don't have an account? <a href="register.php">Sign Up</a></p>
+
+        </form>
+    </div>
+</body>
+
+</html>

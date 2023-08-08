@@ -24,13 +24,29 @@ $i = 0;
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Products</title>
+    <style>
+        #bd{
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+        }
+        #tbl{
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid black;
+            border-radius: 5px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
 </head>
 
-<body>
+<body id="bd">
 <a href="../users/dashboard.php">Home</a> | <a href="create.php">Create Products</a> | <a href="../auth/logout.php">Logout</a>
 	<br/><br/>    
 
-    <table>
+    <table id="tbl">
         <tr bgcolor='#CCC'>
             <th>S. No.</th>
             <th>Name</th>

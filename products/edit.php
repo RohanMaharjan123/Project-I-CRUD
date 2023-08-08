@@ -50,9 +50,28 @@ if (isset($_GET['id'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Products</title>
+    <style>
+        #bd{
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+        }
+        #fm{
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+        }
+        .form-group{
+            margin: 5px;
+            padding: 5px;
+        }
+        .in{
+            text-align:center;
+        }
+    </style>
 </head>
 
-<body>
+<body id ="bd">
 <a href="../users/dashboard.php">Home</a> | <a href="index.php">View Products</a> | <a href="../auth/logout.php">Logout</a>
     <br><br>
 
@@ -60,20 +79,20 @@ if (isset($_GET['id'])) {
         <p><?php echo $error; ?></p>
     <?php else : ?>
 
-        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+        <form id= "fm" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <input type="hidden" name="id" value="<?php echo $product['id']; ?>">
 
             <div class="form-group">
-                <input type="text" name="name" id="name" placeholder="Name" value="<?php echo $product['name']; ?>">
+                <input class="in" type="text" name="name" id="name" placeholder="Name" value="<?php echo $product['name']; ?>">
             </div>
             <div class="form-group">
-                <input type="text" name="qty" id="qty" placeholder="Quantity" value="<?php echo $product['qty']; ?>">
+                <input class="in" type="text" name="qty" id="qty" placeholder="Quantity" value="<?php echo $product['qty']; ?>">
             </div>
             <div class="form-group">
-                <input type="text" name="price" id="price" placeholder="Price" value="<?php echo $product['price']; ?>">
+                <input class="in" type="text" name="price" id="price" placeholder="Price" value="<?php echo $product['price']; ?>">
             </div>
             <div class="form-group">
-                <input type="submit" value="Update" name="create" class="btn">
+                <input class="in" type="submit" value="Update" name="create" class="btn">
             </div>
         </form>
     <?php endif; ?>
