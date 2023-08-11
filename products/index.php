@@ -29,7 +29,7 @@ $i = 0;
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
+            background-color: antiquewhite;
         }
         #bd {
             display: flex;
@@ -97,6 +97,7 @@ $i = 0;
                 <th>Name</th>
                 <th>Quantity</th>
                 <th>Price</th>
+                <th>Total</th>
                 <th>Action</th>
             </tr>
             <?php foreach ($products as $product) {
@@ -107,6 +108,7 @@ $i = 0;
                 <td><?php echo $product['name'] ?></td>
                 <td><?php echo $product['qty'] ?></td>
                 <td>Rs. <?php echo $product['price'] ?></td>
+                <td>Rs. <?php echo $product['qty'] * $product['price']?></td>
                 <td class="action-links">
                     <a href="edit.php?id=<?php echo $product['id']?>">Edit</a>
                     <a href="delete.php?id=<?php echo $product['id']?>" onclick="return confirm('Are you sure you want to delete?')">Delete</a>

@@ -39,13 +39,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
+            background-color: antiquewhite;
         }
         #bd {
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
             min-height: 100vh;
             text-align: center;
         }
@@ -67,7 +66,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         }
         #fm {
             width: 300px;
-            margin-top: 20px;
+            margin-top: 10px;
             padding: 20px;
             background-color: #ffffff;
             border-radius: 5px;
@@ -81,6 +80,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 4px;
+            text-align:center;
         }
         .error {
             color: #ff0000;
