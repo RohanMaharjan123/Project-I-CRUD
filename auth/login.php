@@ -24,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $_SESSION['username'] = $username;
             $_SESSION['auth'] = true;
             
-            $userId = getUserId($username);
+            $userId = getUserId($username); 
             $_SESSION['login_id'] = $userId;
             header('Location: ../users/dashboard.php');
             exit();

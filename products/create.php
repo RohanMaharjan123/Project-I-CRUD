@@ -35,46 +35,95 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create Products</title>
     <style>
-        #bd{
-            text-align: center;
-            justify-content: center;
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+        #bd {
+            display: flex;
+            flex-direction: column;
             align-items: center;
-        }
-        #fm{
-            text-align: center;
             justify-content: center;
-            align-items: center;
+            min-height: 100vh;
+            text-align: center;
         }
-        .form-group{
-            margin: 5px;
-            padding: 5px;
+        #btn-group {
+            margin-bottom: 20px;
         }
-        .in{
-            text-align:center;
-            margin: 5px;
+        .btn {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 20px;
+            margin: 0 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+        #fm {
+            width: 300px;
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .form-group {
+            margin-bottom: 10px;
+        }
+        .in {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .error {
+            color: #ff0000;
+        }
+        .btn-submit {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        .btn-submit:hover {
+            background-color: #0056b3;
         }
     </style>
 </head>
 
-<body id="bd">
-    
-<a href="../users/dashboard.php">Home</a> | <a href="index.php">View Products</a> | <a href="../auth/logout.php">Logout</a>
-    <br><br>
-
-    <form id="fm" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-        <div class="form-group">
-            <input class="in" type="text" name="name" id="name" placeholder="Name">
+<body>
+    <div id="bd">
+        <div id="btn-group">
+            <a href="../users/dashboard.php" class="btn">Home</a>
+            <a href="index.php" class="btn">View Products</a>
+            <a href="../auth/logout.php" class="btn">Logout</a>
         </div>
-        <div class="form-group">
-            <input class="in" type="text" name="qty" id="qty" placeholder="Quantity">
-        </div>
-        <div class="form-group">
-            <input class="in" type="text" name="price" id="price" placeholder="Price">
-        </div>
-        <div class="form-group">
-            <input class="in" type="submit" value="Create" name="create" class="btn">
-        </div>
-    </form>
+        <form id="fm" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+            <?php if(isset($error)) { ?>
+                <p class="error"><?php echo $error; ?></p>
+            <?php } ?>
+            <div class="form-group">
+                <input class="in" type="text" name="name" id="name" placeholder="Name">
+            </div>
+            <div class="form-group">
+                <input class="in" type="text" name="qty" id="qty" placeholder="Quantity">
+            </div>
+            <div class="form-group">
+                <input class="in" type="text" name="price" id="price" placeholder="Price">
+            </div>
+            <div class="form-group">
+                <input class="btn-submit" type="submit" value="Create" name="create">
+            </div>
+        </form>
+    </div>
 </body>
 
 </html>

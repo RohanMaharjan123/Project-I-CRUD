@@ -108,6 +108,8 @@ function saveUser($username, $email, $hashed_password)
                 <input type="submit" value="Register" class="btn" name="register">
             </div>
             <p>Have an account already?<a href="login.php">Log in</a></p>
+
+            
         </form>
     </div>
 </body>

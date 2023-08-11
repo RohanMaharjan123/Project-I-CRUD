@@ -10,32 +10,45 @@ session_start();
     <title>Dashboard</title>
     <style>
         body {
-            margin: auto;
-            /* background-color: #d34970; */
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
         }
 
         #container {
-            height: 657px;
-            justify-content: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
             text-align: center;
-            background-color: antiquewhite;
         }
 
         #header {
-            width: auto;
+            font-size: 28px;
             color: maroon;
-            font-size: 32px;
-            padding: 10px 10px 10px 0px;
             margin-bottom: 25px;
-            /* border-bottom: 1px solid green; */
+        }
+
+        .dashboard-links a {
+            display: block;
+            margin: 10px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .dashboard-links a:hover {
+            background-color: #0056b3;
         }
 
         #footer {
-            /* border-top: 1px solid green; */
             margin-top: 20px;
             color: #336699;
-            padding: 10px;
-
+            font-size: 14px;
         }
     </style>
 </head>
@@ -45,15 +58,14 @@ session_start();
         <div id="header">
             <?php echo "Welcome " . $_SESSION['username']; ?>
         </div>
-        <a href='../auth/logout.php'>Logout</a><br />
-        <br />
-        <a href='../products/index.php'>View and Add Products</a>
-        <br /><br />
+        <div class="dashboard-links">
+            <a href='../auth/logout.php'>Logout</a>
+            <a href='../products/index.php'>View and Add Products</a>
+        </div>
         <div id="footer">
             Created by Rohan Maharjan
         </div>
     </div>
-
 </body>
 
 </html>
