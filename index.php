@@ -1,4 +1,7 @@
-<?php session_start(); ?>
+<?php 
+session_save_path("c:/xampp/tmp");
+
+session_start(); ?>
 <!DOCTYPE html>
 <html>
 <head>

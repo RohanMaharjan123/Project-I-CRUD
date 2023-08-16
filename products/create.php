@@ -1,4 +1,5 @@
 <?php 
+session_save_path("c:/xampp/tmp");
 session_start();
 include("../includes/config.inc.php");
 
@@ -8,19 +9,19 @@ error_reporting(E_ALL);
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $name = $_POST['name'];
-    $qty = $_POST['qty'];
+    $quantity = $_POST['quantity'];
 	$price = $_POST['price'];
     $id = $_SESSION['login_id'];
 	
-    if (empty($name) || empty($qty) || empty($price)) {
+    if (empty($name) || empty($quantity) || empty($price)) {
         $error = "All fields are required.";
     } else{
-        $query = "INSERT INTO products(name, qty, price, user_id) VALUES (:name, :qty, :price, :id)";
+        $query = "INSERT INTO products(name, quantity, price, user_id) VALUES (:name, :quantity, :price, :id)";
 
         $stmt = $conn -> prepare($query);
 
         $stmt -> bindParam(':name', $name);
-        $stmt -> bindParam(':qty', $qty);
+        $stmt -> bindParam(':quantity', $quantity);
         $stmt -> bindParam(':price', $price);
         $stmt -> bindParam(':id', $id);
         $stmt -> execute();
@@ -114,7 +115,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 <input class="in" type="text" name="name" id="name" placeholder="Name">
             </div>
             <div class="form-group">
-                <input class="in" type="text" name="qty" id="qty" placeholder="Quantity">
+                <input class="in" type="text" name="quantity" id="quantity" placeholder="Quantity">
             </div>
             <div class="form-group">
                 <input class="in" type="text" name="price" id="price" placeholder="Price">

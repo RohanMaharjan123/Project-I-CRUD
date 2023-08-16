@@ -1,5 +1,6 @@
 <?php
 $error = '';
+session_save_path("c:/xampp/tmp");
 
 session_start();
 if (isset($_POST['login'])) {

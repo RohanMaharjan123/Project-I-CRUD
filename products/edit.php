@@ -1,4 +1,6 @@
 <?php
+session_save_path("c:/xampp/tmp");
+
 session_start();
 include("../includes/config.inc.php");
 
@@ -117,7 +119,7 @@ if (isset($_GET['id'])) {
                         <input class="in" type="text" name="name" id="name" placeholder="Name" value="<?php echo $product['name']; ?>">
                     </div>
                     <div class="form-group">
-                        <input class="in" type="text" name="qty" id="qty" placeholder="Quantity" value="<?php echo $product['qty']; ?>">
+                        <input class="in" type="text" name="quantity" id="quantity" placeholder="Quantity" value="<?php echo $product['quantity']; ?>">
                     </div>
                     <div class="form-group">
                         <input class="in" type="text" name="price" id="price" placeholder="Price" value="<?php echo $product['price']; ?>">

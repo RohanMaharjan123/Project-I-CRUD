@@ -1,4 +1,6 @@
 <?php
+session_save_path("c:/xampp/tmp");
+
 session_start();
 
 include("../includes/config.inc.php");

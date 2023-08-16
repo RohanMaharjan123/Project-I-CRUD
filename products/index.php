@@ -1,4 +1,6 @@
 <?php
+session_save_path("c:/xampp/tmp");
+
 session_start();
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
@@ -106,9 +108,9 @@ $i = 0;
             <tr>
                 <td><?php echo $i?></td>
                 <td><?php echo $product['name'] ?></td>
-                <td><?php echo $product['qty'] ?></td>
+                <td><?php echo $product['quantity'] ?></td>
                 <td>Rs. <?php echo $product['price'] ?></td>
-                <td>Rs. <?php echo $product['qty'] * $product['price']?></td>
+                <td>Rs. <?php echo $product['quantity'] * $product['price']?></td>
                 <td class="action-links">
                     <a href="edit.php?id=<?php echo $product['id']?>">Edit</a>
                     <a href="delete.php?id=<?php echo $product['id']?>" onclick="return confirm('Are you sure you want to delete?')">Delete</a>
