@@ -1,4 +1,5 @@
 <?php
+
 session_start();
 ?>
 <!DOCTYPE html>
@@ -60,7 +61,17 @@ session_start();
         </div>
         <div class="dashboard-links">
             <a href='../auth/logout.php'>Logout</a>
-            <a href='../products/index.php'>View and Add Products</a>
+            <!-- <a href='../products/index.php'>View and Add Products</a> -->
+<!-- if user is admin show two button: Users Manage button and User Record Management button -->
+        <?php
+        if ($_SESSION['type'] == 'admin') {
+            echo "<a href='../users/index.php'>Users Management</a>";
+            echo "<a href='../products/Aindex.php'>Products Management</a>";
+        }else if($_SESSION['type'] == 'user'){
+            echo "<a href='../products/index.php'>View and Add Products</a>";
+        }
+        ?>
+
         </div>
         <div id="footer">
             Created by Rohan Maharjan

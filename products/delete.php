@@ -1,4 +1,5 @@
 <?php
+
 session_start();
 
 include("../includes/config.inc.php");
@@ -10,7 +11,10 @@ $query = "DELETE FROM products WHERE id= :id";
 $stmt = $conn->prepare($query);
 $stmt->bindParam(':id', $id);
 $stmt->execute();
-
-header("Location: index.php");
+if($_SESSION['type'] == 'admin'){
+    header("Location: Aindex.php");
+}else if($_SESSION['type'] == 'user'){
+    header("Location: index.php");
+}
 
 ?>
