@@ -55,7 +55,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 function saveUser($username, $email, $hashed_password)
 {
     global $conn;
-    $query = "INSERT INTO users(username, email, password) VALUES (:username, :email, :password)";
+    $query = "INSERT INTO users(username, email, password,type) VALUES (:username, :email, :password,'user')";
 
     $stmt = $conn->prepare($query);
     $stmt->bindParam(':username', $username);

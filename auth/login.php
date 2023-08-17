@@ -24,9 +24,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         if (authenticateUser($username, $password)) {
             $_SESSION['username'] = $username;
             $_SESSION['auth'] = true;
-            
-            $userId = getUserId($username); 
-            $_SESSION['login_id'] = $userId;
+            $_SESSION['type'] = getUserType($username);
+            $_SESSION['login_id'] = getUserId($username); 
             header('Location: ../users/dashboard.php');
             exit();
         } else {
@@ -66,6 +65,19 @@ function getUserId($username)
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
     return $user['id'];
+}
+
+function getUserType($username){
+    global $conn;
+    $query = "SELECT type FROM users WHERE username = :username OR email = :username";
+
+    $stmt = $conn->prepare($query);
+    $stmt->bindParam(':username', $username);
+    $stmt->execute();
+
+    $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    return $user['type'];
 }
 ?>
 <!DOCTYPE html>

@@ -25,6 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $stmt -> bindParam(':price', $price);
         $stmt -> bindParam(':id', $id);
         $stmt -> execute();
+        header("Location: index.php");
     }
 }
 ?>
@@ -77,7 +78,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             margin-bottom: 10px;
         }
         .in {
-            width: 100%;
+            width: 70%;
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 4px;

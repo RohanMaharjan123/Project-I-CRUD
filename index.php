@@ -6,58 +6,7 @@ session_start(); ?>
 <html>
 <head>
     <title>Homepage</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            background-color: antiquewhite;
-        }
-        #container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            text-align: center;
-        }
-        #header {
-            font-size: 28px;
-            margin-bottom: 20px;
-            color: #333;
-        }
-        .welcome-text {
-            font-size: 14px;
-            color: #333;
-            margin-bottom: 10px;
-        }
-		.login-button, .signup-button {
-            margin-top: 10px;
-            display: inline-block;
-            padding: 8px 16px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 16px;
-            text-align: center;
-            transition: background-color 0.3s, color 0.3s;
-        }
-
-		.login-button {
-            background-color: #007bff;
-            color: #fff;
-        }
-        .signup-button {
-            background-color: #28a745;
-            color: #fff;
-        }
-        .login-button:hover, .signup-button:hover {
-            background-color: #0056b3;
-        }
-		#footer{
-			margin:20px;
-		}
-    </style>
+    <link rel="stylesheet" type="text/css" href="css/indexStyle.css">
 </head>
 
 <body>

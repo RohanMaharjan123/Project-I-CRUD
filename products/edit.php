@@ -9,7 +9,24 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    // ... (your existing code for updating the product)
+    $id = $_POST['id'];
+    $name = $_POST['name'];
+    $quantity = $_POST['quantity'];
+    $price = $_POST['price'];
+
+    $updateQuery = "UPDATE products SET name = :name, quantity = :quantity, price = :price WHERE id = :id";
+    $updateStmt = $conn->prepare($updateQuery);
+    $updateStmt->bindParam(':id', $id);
+    $updateStmt->bindParam(':name', $name);
+    $updateStmt->bindParam(':quantity', $quantity);
+    $updateStmt->bindParam(':price', $price);
+
+    if ($updateStmt->execute()) {
+        header("Location: index.php");
+        exit();
+    } else {
+        $error = "Failed to update product.";
+    }
 }
 
 if (isset($_GET['id'])) {
@@ -60,7 +77,7 @@ if (isset($_GET['id'])) {
             margin-bottom: 10px;
         }
         .in {
-            width: 100%;
+            width: 70%;
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 4px;
