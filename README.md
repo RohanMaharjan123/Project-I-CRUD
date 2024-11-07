@@ -65,10 +65,40 @@ To get started with the Inventory Management System, follow these steps:
 ## Screenshots
 
 ### Dashboard
-![Dashboard](screenshot/.png)
+![Dashboard](screenshot/dashboard.png)
+
+### Login
+![Login](screenshot/login.png)
+
+### Register
+![Register](screenshot/register.png)
+
+### Admin Login
+![Admin Login](screenshot/adminlogin.png)
+
+### Listing of User
+![Listing of User](screenshot/listofuser.png)
+
+### Deleting user by Admin
+![Deleting user by Admin](screenshot/deletinguser.png)
+
+### Listing of products in Inventory
+![Listing of products in Inventory](screenshot/listofproducts.png)
+
+### User Login
+![User Login](screenshot/userlogin.png)
+
+### User Dashboard
+![User Dashboard](screenshot/userdashboard.png)
+
+### User's view of inventory
+![User's view of inventory](screenshot/usersproductview.png)
 
 ### Add New Item
-![Add New Item](screenshot/.png)
+![Add New Item](screenshot/additem.png)
+
+### Delete Item
+![Add New Item](screenshot/deleteproduct.png)
 
 ## Contributing
 
