@@ -56,7 +56,7 @@ To get started with the Inventory Management System, follow these steps:
 
 ## Usage
 
-1. **Login**: [If applicable, mention login functionality.]
+1. **Login**: Login if the user is already registered.
 2. **View Inventory**: Browse the list of current inventory items.
 3. **Add New Item**: Use the form to add a new inventory item.
 4. **Edit Item**: Select an item and update its details.
